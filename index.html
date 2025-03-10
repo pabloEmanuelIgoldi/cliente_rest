@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliente REST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+    <h1>Cliente REST</h1>
+
+    <br>
+    <fieldset>
+        <legend>Endpoint</legend>
+        <input type="text" id="url" size="100" value="http://localhost:8080/recurso">*
+        <br>*Ingresar url del servicio. 
+    </fieldset>
+
+    <br>
+    <fieldset>
+    <legend>Metodo HTTP</legend>
+    <label for="get"><font>GET</font></label>
+    <input type= "radio" name="metodoHttp" id="GET" value= "get" >
+    
+    <label for="post"><font>POST</font></label>
+    <input type= "radio" name="metodoHttp" id="POST" value= "post" checked>
+    
+    <label for="put"><font>PUT</font></label>
+    <input type= "radio" name="metodoHttp" id="PUT" value= "put">
+
+    <label for="delete"><font>DELETE</font></label>
+    <input type= "radio" name="metodoHttp" id="DELETE" value= "delete">
+    </fieldset>
+
+    <br>
+    <fieldset>
+        <legend>REQUEST BODY</legend>
+        <p><label for="param">¿Se envia body?</label>
+        <label for="hayParametroTrue"><font>SI</font></label>
+        <input type= "radio" name="hayParametro" id="hayParametroTrue" value= "true" checked>
+        <label for="hayParametroFalse"><font>NO</font></label>
+        <input type= "radio" name="hayParametro" id="hayParametroFalse" value= "false">
+
+        <p><label for="param">BODY(*):</label></p>
+        <textarea id="params" name="param" rows="10" cols="100">{'nombre': 'test', 'pass': '1124'}
+        </textarea>        
+        <br>*Enviar body con formato JSON. Cada parametro se tiene que enviar con comillas simples: tanto nombre como valor.
+    </fieldset>
+
+    <br>
+    <button id="callServices">Enviar</button>
+    <h2>REPONSE</h2>
+    <pre id="json-container"></pre>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+
+
+</body>
+</html>
